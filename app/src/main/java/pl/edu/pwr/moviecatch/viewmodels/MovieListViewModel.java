@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MovieListViewModel extends ViewModel {
 
-    private final MovieRepository movieRepository;
+    MovieRepository movieRepository;
 
     public MovieListViewModel() {
         movieRepository = MovieRepository.getInstance();

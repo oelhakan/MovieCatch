@@ -21,8 +21,8 @@ import retrofit2.Response;
 
 public class MovieApiClient {
 
-    private final MutableLiveData<List<MovieModel>> mMovies;
-    private final MutableLiveData<List<MovieModel>> mMoviesPop;
+    public MutableLiveData<List<MovieModel>> mMovies;
+    public MutableLiveData<List<MovieModel>> mMoviesPop;
     private static MovieApiClient instance;
 
     private RetrieveMoviesRunnable retrieveMoviesRunnable;

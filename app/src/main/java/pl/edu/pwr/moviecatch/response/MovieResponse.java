@@ -9,7 +9,7 @@ public class MovieResponse {
 
     @SerializedName("results")
     @Expose
-    private MovieModel movie;
+    public MovieModel movie;
 
     public MovieModel getMovie() {
         return movie;

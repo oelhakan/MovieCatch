@@ -11,7 +11,7 @@ public class MovieRepository {
 
     private static MovieRepository instance;
 
-    private final MovieApiClient movieApiClient;
+    MovieApiClient movieApiClient;
 
     private String mQuery;
     private int mPageNumber;

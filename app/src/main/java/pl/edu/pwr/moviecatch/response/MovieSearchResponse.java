@@ -11,11 +11,11 @@ public class MovieSearchResponse {
 
     @SerializedName("total_results")
     @Expose()
-    private int total_count;
+    public int total_count;
 
     @SerializedName("results")
     @Expose()
-    private List<MovieModel> movies;
+    public List<MovieModel> movies;
 
     public int getTotal_count(){
         return total_count;
