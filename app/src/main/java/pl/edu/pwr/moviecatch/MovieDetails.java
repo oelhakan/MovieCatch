@@ -2,6 +2,8 @@ package pl.edu.pwr.moviecatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -47,4 +49,11 @@ public class MovieDetails extends AppCompatActivity {
                     .into(imageViewDetails);
         }
     }
+
+    public static Intent getIntent(Context context, MovieModel movieModel) {
+        Intent intent = new Intent(context, MovieDetails.class);
+        intent.putExtra("movie", movieModel);
+        return intent;
+    }
+
 }
