@@ -11,9 +11,9 @@ import pl.edu.pwr.moviecatch.R;
 
 public class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    ImageView imageView;
-    RatingBar ratingBar;
-    OnMovieListener onMovieListener;
+    public ImageView imageView;
+    public RatingBar ratingBar;
+    public OnMovieListener onMovieListener;
 
     public MovieViewHolder(@NonNull View itemView, OnMovieListener onMovieListener) {
         super(itemView);
