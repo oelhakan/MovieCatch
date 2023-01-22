@@ -1,7 +1,6 @@
 package pl.edu.pwr.moviecatch.response;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,37 +10,31 @@ import pl.edu.pwr.moviecatch.models.MovieModel;
 public class MovieResponseTest {
 
     private MovieResponse movieResponse;
+    private MovieModel movie;
 
     @Before
-    public void setUp(){
+    public void setUp() {
+        // Prepare test data
+        movie = new MovieModel("Title 1", "Path 1", "Release Date 1", 1, 4.5F, "Overview 1", "en");
         movieResponse = new MovieResponse();
-    }
-
-    @Test
-    public void shouldReturnMovie() {
-        //given
-        MovieModel mockResult = mock(MovieModel.class);
-        movieResponse.movie = mockResult;
-        //when
-        MovieModel result = movieResponse.getMovie();
-        //then
-        assertEquals(result, mockResult);
-    }
-
-    @Test
-    public void shouldReturnStringRepresentationOfMovie() {
-        //given
-        MovieModel movie = new MovieModel("The Godfather",
-                "http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQUObbKfZg1xCfueoYQX7RZFIBoXQ6rAy0ToKzsuFs0X71FfObEFNfSUhRjRbFy1VEU",
-                "01.01.1977",
-                1,
-                4.5F,
-                "Movie Overview For The Godfather",
-                "English");
         movieResponse.movie = movie;
-        //when
+    }
+
+    @Test
+    public void testGetMovie_returnsCorrectMovie() {
+        // Call the method under test
+        MovieModel returnedMovie = movieResponse.getMovie();
+
+        // Verify the results
+        assertEquals(movie, returnedMovie);
+    }
+
+    @Test
+    public void testToString_returnsCorrectString() {
+        // Call the method under test
         String result = movieResponse.toString();
-        //then
-        assertEquals(result, "MovieResponse{movie=MovieModel{title='The Godfather', poster_path='http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQUObbKfZg1xCfueoYQX7RZFIBoXQ6rAy0ToKzsuFs0X71FfObEFNfSUhRjRbFy1VEU', release_date='01.01.1977', movie_id=1, vote_average=4.5, movie_overview='Movie Overview For The Godfather', original_language='English'}}");
+
+        // Verify the results
+        assertEquals("MovieResponse{movie=MovieModel{title='Title 1', poster_path='Path 1', release_date='Release Date 1', movie_id=1, vote_average=4.5, movie_overview='Overview 1', original_language='en'}}", result);
     }
 }

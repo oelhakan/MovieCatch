@@ -26,6 +26,10 @@ public class MovieSearchResponse {
 
     }
 
+    public void setMovies(List<MovieModel> movies){
+        this.movies = movies;
+    }
+
     @Override
     public String toString() {
         return "MovieSearchResponse{" +

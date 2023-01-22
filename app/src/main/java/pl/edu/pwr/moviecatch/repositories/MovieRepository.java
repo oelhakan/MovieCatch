@@ -24,7 +24,7 @@ public class MovieRepository {
         return instance;
     }
 
-    private MovieRepository() {
+    MovieRepository() {
         movieApiClient = MovieApiClient.getInstance();
     }
 
